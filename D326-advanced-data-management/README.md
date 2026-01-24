@@ -1,6 +1,6 @@
 A.  Summarize one real-world written business report that can be created from the DVD Dataset from the “Labs on Demand Assessment Environment and DVD Database” attachment. 
 
-'There is four months of usable rental data. Since it is less than a year, an annual report will not be possible. A month to month report is possible. Our monthly report will focus on total payments by month and inventory. This will guage monthly profit and indicate what inventory items are more popular.'
+'There is four months of usable rental data. Since it is less than a year, an annual report will not be possible. A month to month report is possible. Our monthly report will focus on total payments by month and inventory. This will gauge monthly profit and indicate what inventory items are more popular.'
 
 1.  Identify the specific fields that will be included in the detailed table and the summary table of the report.
 
@@ -38,7 +38,7 @@ The summary table shows monthly income and which films are producing that income
 
 6.  Explain how frequently your report should be refreshed to remain relevant to stakeholders.
 
-These reports need to be compiled monthly within the first buisness day of the new month. This guarrantees the information is current and accessible in time to predict the current month trends.
+These reports need to be compiled monthly within the first business day of the new month. This guarantees the information is current and accessible in time to predict the current month trends.
 
 B.  Provide original code for function(s) in text format that perform the transformation(s) you identified in part A4.
  
@@ -131,7 +131,7 @@ SELECT * FROM DETAILED;
 
 1.  Identify a relevant job scheduling tool that can be used to automate the stored procedure.
  
- I would install pgAgent to handle automated job scheduling and management on postgresSQL databases. I would schedule the jobs off hours at 0100 on the first of each month. This time prevents interferance in daily activities while compiling necessary information as soon as possible.
+ I would install pgAgent to handle automated job scheduling and management on postgresSQL databases. I would schedule the jobs off hours at 0100 on the first of each month. This time prevents interference in daily activities while compiling necessary information as soon as possible.
 
 H.  Acknowledge all utilized sources, including any sources of third-party code, using in-text citations and references. If no sources are used, clearly declare that no sources were used to support your submission.
  
