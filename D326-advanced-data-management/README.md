@@ -54,6 +54,21 @@ $$
 
 C.  Provide original SQL code in a text format that creates the detailed and summary tables to hold your report table sections.
  
+CREATE TABLE SUMMARY (
+    payment_id INT PRIMARY KEY Foreign Key REFERENCES payment(payment_id),
+    film_id INT Foreign Key REFERENCES inventory(film_id),
+    month_return VARCHAR(9),
+    amount DECIMAL(5,2)
+)
+
+CREATE TABLE DETAILED (
+    payment_id INT PRIMARY KEY Foreign Key REFERENCES payment(payment_id),
+    film_id INT Foreign Key REFERENCES inventory(film_id),
+    staff_id INT,
+    customer_id INT,
+    amount DECIMAL(5,2),
+    month_return VARCHAR(9)
+)
 
 D.  Provide an original SQL query in a text format that will extract the raw data needed for the detailed section of your report from the source database.
  
