@@ -72,25 +72,67 @@ CREATE TABLE DETAILED (
 
 D.  Provide an original SQL query in a text format that will extract the raw data needed for the detailed section of your report from the source database.
  
+INSERT INTO DETAILED(payment_id, staff_id, customer_id, amount, month_return)
+SELECT p.payment_id, p.staff_id, p.customer_id, p.amount, month_string(p.payment_date)
+FROM payment AS p 
+INSERT INTO DETAILED(film_id)
+SELECT i.film_id
+FROM inventory as i
+WHERE p.payment_date BETWEEN '07/01/2005 00:00:00' AND '08/31/2005 23:59:59'
+GROUP BY i.film_id
+ORDER BY month_string(p.payment_date) DESC;
 
 E.  Provide original SQL code in a text format that creates a trigger on the detailed table of the report that will continually update the summary table as data is added to the detailed table.
  
+CREATE OR REPLACE FUNCTION insert_trigger_function() 
+RETURNS TRIGGER 
+LANGUAGE plpgsql 
+AS $$ 
+BEGIN 
+DELETE FROM SUMMARY;
+INSERT INTO SUMMARY(payment_id, film_id, month_return, amount)
+SELECT payment_id, film_id, month_return, amount
+FROM DETAILED 
+GROUP BY month_return, payment_id, film_id, amount
+ORDER BY month_return, payment_id; 
+RETURN NEW; 
+END; 
+$$
+
+CREATE TRIGGER new_summary 
+AFTER INSERT 
+ON DETAILED
+FOR EACH STATEMENT 
+EXECUTE PROCEDURE insert_trigger_function(); 
 
 F.  Provide an original stored procedure in a text format that can be used to refresh the data in both the detailed table and summary table. The procedure should clear the contents of the detailed table and summary table and perform the raw data extraction from part D.
 
+CREATE OR REPLACE PROCEDURE refresh_tables() 
+LANGUAGE plpgsql 
+AS $$ 
+BEGIN
+DELETE FROM DETAILED;
+INSERT INTO DETAILED(payment_id, staff_id, customer_id, amount, month_return)
+SELECT p.payment_id, p.staff_id, p.customer_id, p.amount, month_string(p.payment_date)
+FROM payment AS p 
+INSERT INTO DETAILED(film_id)
+SELECT i.film_id
+FROM inventory as i
+WHERE p.payment_date BETWEEN '07/01/2005 00:00:00' AND '08/31/2005 23:59:59'
+GROUP BY i.film_id
+ORDER BY month_string(p.payment_date) DESC;
+RETURN; 
+END; 
+$$ 
+
+CALL refresh_tables(); 
+SELECT * FROM SUMMARY; 
+SELECT * FROM DETAILED; 
+
 1.  Identify a relevant job scheduling tool that can be used to automate the stored procedure.
  
-
-G.  Provide a Panopto video recording that includes the presenter and a vocalized demonstration of the functionality of the code used for the analysis.
- 
-
-Note: For instructions on how to access and use Panopto, use the "Panopto How-To Videos" web link provided below. To access Panopto's website, navigate to the web link titled "Panopto Access," and then choose to log in using the “WGU” option. If prompted, log in using your WGU student portal credentials, and then it will forward you to Panopto’s website.
-
-
-To submit your recording, upload it to the Panopto drop box titled “Advanced Data Management D191 | D326 (Student Creators) [assignments].” Once the recording has been uploaded and processed in Panopto's system, retrieve the URL of the recording from Panopto and copy and paste it into the Links option. Upload the remaining task requirements using the Attachments option.
- 
+ I would install pgAgent to handle automated job scheduling and management on postgresSQL databases. I would schedule the jobs off hours at 0100 on the first of each month. This time prevents interferance in daily activities while compiling necessary information as soon as possible.
 
 H.  Acknowledge all utilized sources, including any sources of third-party code, using in-text citations and references. If no sources are used, clearly declare that no sources were used to support your submission.
  
-
-I.  Demonstrate professional communication in the content and presentation of your submission.
+No sources were used for this submission.
