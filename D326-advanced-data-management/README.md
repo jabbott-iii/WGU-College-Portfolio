@@ -4,21 +4,53 @@ A.  Summarize one real-world written business report that can be created from th
 
 1.  Identify the specific fields that will be included in the detailed table and the summary table of the report.
 
+The summary table will include:
+amount (numeric 5,2)
+payment_id (primary key / foreign key / int)
+film_id (foreign key / int)
+month (primary key / varchar(9))
 
-
+The detailed summary will include:
+amount (numeric 5,2)
+payment_id (primary key / foreign key / int)
+film_id (foreign key / int)
+month (varchar(9))
+staff_id (int)
+customer_id (int)
 
 2.  Describe the types of data fields used for the report.
 
+varchar
+integer (int)
+decimal (numeric 5,2)
+
 3.  Identify at least two specific tables from the given dataset that will provide the data necessary for the detailed table section and the summary table section of the report.
+
+The necessary data is coming from the payment table and the inventory table.
 
 4.  Identify at least one field in the detailed table section that will require a custom transformation with a user-defined function and explain why it should be transformed (e.g., you might translate a field with a value of N to No and Y to Yes).
 
+payment_date will need to be transformed from a datetime stamp to just a month value. This is for readability.
+
 5.  Explain the different business uses of the detailed table section and the summary table section of the report. 
+
+The summary table shows monthly income and which films are producing that income. The detailed table provides the same information as the summary table, however, it also provides insight on the productivity of the staff, the number of unique customers, the number of repeat customers, how much the repeat customers are spending, and what films customers are drawn to renting.
 
 6.  Explain how frequently your report should be refreshed to remain relevant to stakeholders.
 
+These reports need to be compiled monthly within the first buisness day of the new month. This guarrantees the information is current and accessible in time to predict the current month trends.
+
 B.  Provide original code for function(s) in text format that perform the transformation(s) you identified in part A4.
  
+CREATE OR REPLACE FUNCTION month_string(payment_date TIMESTAMP) 
+RETURNS VARCHAR(9) 
+LANGUAGE plpgsql AS $$
+DECLARE month_return VARCHAR(9); 
+BEGIN 
+SELECT to_char(payment_date, 'Month') INTO month_return; 
+RETURN month_return; 
+END; 
+$$
 
 C.  Provide original SQL code in a text format that creates the detailed and summary tables to hold your report table sections.
  
