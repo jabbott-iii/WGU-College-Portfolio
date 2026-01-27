@@ -70,7 +70,7 @@ CREATE OR REPLACE PROCEDURE refresh_tables()
 LANGUAGE plpgsql 
 AS $$ 
 BEGIN
-TRUNCATE detailed;
+TRUNCATE summary, detailed;
 INSERT INTO detailed (payment_id, film_id, staff_id, customer_id, amount, month_return)
 SELECT
   p.payment_id,
@@ -86,7 +86,6 @@ JOIN inventory i
   ON i.inventory_id = r.inventory_id
 WHERE p.payment_date >= timestamp '2007-02-01 00:00:00'
   AND p.payment_date <= timestamp '2007-05-31 23:59:59';
-TRUNCATE summary;
 INSERT INTO summary(payment_id, film_id, amount, month_return)
 SELECT payment_id, film_id, amount, month_return
 FROM detailed;
