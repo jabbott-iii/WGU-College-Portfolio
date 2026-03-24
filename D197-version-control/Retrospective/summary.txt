@@ -1,9 +1,0 @@
-The merge conflict in part E1 was resolved by making a decision on how to handle the merge.
-I accepted both branches and then went to the merge manager to detail how git will combine them.
-Afterwards I had to commit my changes to be able to push.
-I also got an error prior to the merge, but that was just because of unsaved changes and easily resolved.
-
-The changes made in part c1 are as follows:
-services.html line 1: /*comment*/
-team.html line 1: /*comment*/
-vision.html line 1: /*comment*/
