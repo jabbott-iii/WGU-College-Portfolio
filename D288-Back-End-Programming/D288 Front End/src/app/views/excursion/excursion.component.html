@@ -1,0 +1,30 @@
+
+<div class="content">
+  <h1>{{vacationTitle}}</h1><br>
+  <div class="grid" fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let excursion of excursions">
+      <mat-card class="mat-elevation-z4" >
+        <img class="vacation-card-image" mat-card-image src="{{excursion.image_URL}}">
+        <mat-card-header>
+          <mat-card-title>{{excursion.excursion_title}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p class="price">
+            ${{excursion.excursion_price | number:'1.2-2'}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button class="menu-button" [routerLink]="['/vacation', vacationId, 'excursions', excursion.id]">
+            <mat-icon class="icon-display">shopping_cart</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+  <div class="cart-container">
+    <div class="vl"></div>
+    <div class="cart">
+      <app-cart></app-cart>
+    </div>
+  </div>
+</div>

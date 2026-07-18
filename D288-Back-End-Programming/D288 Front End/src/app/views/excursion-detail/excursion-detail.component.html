@@ -1,0 +1,27 @@
+
+<div class="content-detail">
+  <button class="button-31 back-button">
+    <a onclick="history.back()">Back</a>
+  </button>
+  <div>
+    <table cellspacing="0">
+      <tr>
+        <td>
+          <img id="vacation-image" src="{{excursion.image_URL}}">
+        </td>
+        <td class="vacation-info-cell">
+          <div class="vacation-info-div" >
+            <h2 class="vacation-title">{{excursion.excursion_title}}</h2>
+            <p>${{excursion.excursion_price | number:'1.2-2'}}</p>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <button class="button-31" id="select-excursions-button" (click)="addToCart(excursionId, vacationId)">
+              <a>Add Excursion</a>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+

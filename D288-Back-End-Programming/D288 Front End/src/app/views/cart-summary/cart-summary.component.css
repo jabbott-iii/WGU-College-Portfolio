@@ -1,0 +1,80 @@
+.customer-info-container {
+  margin: 16px;
+  background: #ECECEC;
+  color: black;
+  border-radius: 10px;
+  padding: 16px;
+  min-width: 350px;
+}
+
+.cart-items-container {
+  margin: 16px;
+  right: 0;
+  left: 0;
+  background: #ECECEC;
+  color: black;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: left;
+}
+
+/* Vacations */
+.cart-items-container > ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Excursion subheading*/
+.cart-items-container ul p {
+  margin-top: 20px;
+}
+
+/* Excursion list*/
+.cart-items-container ul ul li {
+  margin-top: 10px;
+}
+
+.cart-items-container > ul li:last-child {
+  margin-bottom: 40px;
+  padding-left: 0;
+}
+
+p.total{
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.checkout-button-container {
+  margin: 16px;
+  right: 0;
+  left: 0;
+  background: white;
+  color: black;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+
+.checkout-button {
+  background-color: #222;
+  border-radius: 4px;
+  border-style: none;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 45px auto 0 auto;
+  min-height: 44px;
+  min-width: fit-content;
+  padding: 9px 20px 8px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.checkout-button:hover,
+.checkout-button:focus {
+  opacity: .75;
+}

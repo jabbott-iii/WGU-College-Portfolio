@@ -1,0 +1,13 @@
+<div class="content">
+  <ul>
+    <li *ngFor="let customer of customers" class="list-item">
+      <p>{{customer.firstName}} {{customer.lastName}}</p>
+      <button mat-button class="edit-customer" routerLink="/customer/{{customer.id}}">
+        <a><mat-icon class="icon-display">visibility</mat-icon></a>
+      </button>
+    </li>
+  </ul>
+  <button class="button-31" routerLink="/customer/new">
+    <a>Add Customer</a>
+  </button>
+</div>

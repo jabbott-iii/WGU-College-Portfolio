@@ -1,0 +1,45 @@
+<!--<form class="form" (ngSubmit)="onSubmit()">-->
+<form class="form" (ngSubmit)="onSubmit()">
+
+  <div class="input-container">
+
+    <div>
+      <label for="firstName">
+        First Name
+      </label>
+      <input id="firstName" name="firstName" type="text" [(ngModel)]="customer.firstName">
+    </div>
+
+    <div>
+      <label for="lastName">
+        Last Name
+      </label>
+      <input id="lastName" name="lastName" type="text" [(ngModel)]="customer.lastName">
+    </div>
+
+    <div>
+      <label for="address">
+        Address
+      </label>
+      <input id="address" name="address" type="text" [(ngModel)]="customer.address">
+    </div>
+
+    <div>
+      <label for="postal_code">
+        Postal Code
+      </label>
+      <input id="postal_code" name="postal_code" type="text" [(ngModel)]="customer.postal_code">
+    </div>
+
+    <div>
+      <label for="phone">
+        Phone Number
+      </label>
+      <input id="phone" name="phone" type="text" [(ngModel)]="customer.phone">
+    </div>
+
+    <button class="button-31" type="submit">Back</button>
+
+  </div>
+
+</form>

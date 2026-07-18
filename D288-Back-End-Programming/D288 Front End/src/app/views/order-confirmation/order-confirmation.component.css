@@ -1,0 +1,82 @@
+
+.content {
+  z-index: 100;
+  display: block;
+  margin-top: 20px;
+  margin-left: 32px;
+  margin-right: 20px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  align-items: center;
+}
+
+.customer-info-container {
+  margin: 16px;
+  right: 0;
+  background: #ECECEC;
+  color: black;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+
+.cart-items-container {
+  margin: 16px;
+  right: 0;
+  left: 0;
+  background: #ECECEC;
+  color: black;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: left;
+}
+
+.checkout-button-container {
+  margin: 16px;
+  right: 0;
+  left: 0;
+  background: white;
+  color: black;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+
+.button-31 {
+  background-color: #222;
+  border-radius: 4px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  max-width: none;
+  min-height: 44px;
+  min-width: 10px;
+  outline: none;
+  overflow: hidden;
+  padding: 9px 20px 8px;
+  text-align: center;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 10%;
+}
+
+.button-31:hover,
+.button-31:focus {
+  opacity: .75;
+}
+
+li {
+  margin: 25px;
+}

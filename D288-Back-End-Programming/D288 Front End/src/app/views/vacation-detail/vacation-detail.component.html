@@ -1,0 +1,25 @@
+
+<div class="content-detail">
+  <button class="button-31 back-button" [routerLink]="['/vacation']"><a>Back</a></button>
+  <div >
+    <table cellspacing="0">
+      <tr>
+        <td>
+          <img id="vacation-image" src="{{vacation.image_URL}}">
+        </td>
+        <td class="vacation-info-cell">
+          <div class="vacation-info-div" >
+            <h2 class="vacation-title">{{vacation.vacation_title}}</h2>
+            <p>${{vacation.travel_price | number:'1.2-2'}}</p>
+            <button class="button-31 select-excursions" [routerLink]="['/vacation', vacation.id, 'excursions']">
+              <a>Select Excursions</a>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <hr>
+    <h2>Description</h2>
+    <p>{{vacation.description}}</p>
+  </div>
+</div>

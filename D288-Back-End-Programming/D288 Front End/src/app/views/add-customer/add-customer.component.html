@@ -1,0 +1,63 @@
+<form class="form" (ngSubmit)="onSubmit()">
+
+  <div class="input-container">
+
+    <div>
+      <label for="firstName">
+        First Name
+      </label>
+      <input id="firstName" name="firstName" type="text" [(ngModel)]="firstName">
+    </div>
+
+    <div>
+      <label for="lastName">
+        Last Name
+      </label>
+      <input id="lastName" name="lastName" type="text" [(ngModel)]="lastName">
+    </div>
+
+    <div>
+      <label for="address">
+        Address
+      </label>
+      <input id="address" name="address" type="text" [(ngModel)]="address">
+    </div>
+
+    <div>
+      <label for="postal_code">
+        Postal Code
+      </label>
+      <input id="postal_code" name="postal_code" type="text" [(ngModel)]="postal_code">
+    </div>
+
+    <div>
+      <label for="phone">
+        Phone Number
+      </label>
+      <input id="phone" name="phone" type="text" [(ngModel)]="phone">
+    </div>
+
+    <div>
+      <label>
+        Country
+      </label>
+      <select [(ngModel)]="countryChoice" id="country" name="country">
+        <option selected="true" disabled="disabled" hidden></option>
+        <option *ngFor="let country of countries" [value]="country.id">{{country.country_name}}</option>
+      </select>
+    </div>
+
+    <div>
+      <label>
+        Division
+      </label>
+      <select [(ngModel)]="divisionChoice" id="division" name="division">
+        <option selected="true" disabled="disabled" hidden></option>
+        <option *ngFor="let division of getDivisionsByCountryId(countryChoice)" [value]="division.id">{{division.division_name}}</option>
+      </select>
+    </div>
+    <button class="button-31" type="submit">Add Customer</button>
+
+  </div>
+
+</form>

@@ -1,0 +1,90 @@
+
+.content {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+}
+
+h2 {
+  font-size: 1.3rem;
+}
+
+li {
+  font-size: 1rem;
+  margin-left: 0;
+  margin-top: 25px;
+  text-align: left;
+}
+
+#cart-items{
+  list-style: none;
+  padding-left: 30px;
+}
+
+.button-and-total-container {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 40px;
+  align-items: center;
+}
+
+.button-31 {
+  background-color: #222;
+  border-radius: 4px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  max-width: none;
+  min-height: 44px;
+  min-width: 10px;
+  outline: none;
+  overflow: hidden;
+  padding: 9px 20px 8px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 60%;
+  position: relative;
+  bottom: 0
+}
+
+.button-31:hover,
+.button-31:focus {
+  opacity: .75;
+}
+
+.cart {
+  float: right;
+  right: 0;
+  margin: 16px;
+  width: 400px;
+  border-left: none;
+  background: white;
+  color: black;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+  z-index: 0;
+}
+
+#party_size{
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  font-size: 20px;
+  padding: 0 0 0 13px;
+  border: 2px solid black;
+}
